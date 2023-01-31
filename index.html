@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainWrapper">
+        <div class="heading">
+            <h1 id="main-title">Jerry Kurtin</h1>
+        </div>
+        <p id="mobile-friendly">Mobile-Friendly Website!</p>
+        <div class="menu" id="menu">
+            <div class="leftmenu" id="leftmenu">
+                <div class="menu-select upper" id="qual-menu">Skills</div>
+                <div class="menu-select lower" id="abt-menu">About</div>
+            </div>
+            <img src="media/headshot.png" alt="Jerry's Portrait" id="headshot">
+            <div class="rightmenu" id="rightmenu">
+                <div class="menu-select upper" id="port-menu">Portfolio</div>
+                <div class="menu-select lower" id="service-menu">Service</div>
+            </div>
+        </div>
+        <div id="ai-select" class="menu-select">AI-Generated Page</div>
+        <div class="bubbles-wrapper">
+            <div class="circle-container" id="school-circle-pos">
+                <div id="school-circle" class="circle-base">
+                    <i class="uil uil-university"></i><strong> School </strong>
+                    <br/>Computer Science<br/>Texas A&M Honors<br/>GPA: 4.0
+                </div>
+            </div>
+
+            <div class="circle-container" id="linkedin-circle-pos">
+                <div id="linkedin-circle" class="circle-base">
+                    <i class="uil uil-linkedin"></i>
+                </div>
+            </div>
+            
+            <div class="circle-container" id="duel2048-circle-pos">
+                <a href="https://www.2048duel.com" target="_blank" rel="noopener noreferrer">
+                <div id="duel2048-circle" class="circle-base" >
+                    <i class="uil uil-link"></i> <strong>Project:</strong><br/>
+                    2048 Duel!
+                    <!-- <img src="media/2048duel.png" alt="2048 duel image" id="duel2048-img"/> -->
+                </div>
+                </a>
+            </div>
+
+            <div class="circle-container" id="hobbies-circle-pos">
+                <div id="hobbies-circle" class="circle-base">
+                    <i class="uil uil-hourglass"></i> <strong>Hobbies</strong><br/>
+                    Climbing <i class="uil uil-mountains-sun"></i><br/>
+                    Jazz Drumming <i class="uil uil-music"></i><br/>
+                    Backpacking <i class="uil uil-backpack"></i><br/>
+                    Reading <i class="uil uil-book-open"></i><br/>
+                </div>
+            </div>
+
+            <div class="circle-container" id="flock-circle-pos">
+                <a href="https://devpost.com/software/flock-9yb8iq" target="_blank" rel="noopener noreferrer">
+                    <div id="flock-circle" class="circle-base">
+                        <i class="uil uil-link"></i> </i> <strong>Project:</strong><br/>
+                        Flock <i class="uil uil-message"></i><br/>
+                        3rd Place<br/>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('scroll', function() {
+            var windowHeight = window.innerHeight;
+            var windowWidth = window.innerWidth;
+            var scrollArea = 2000 - windowHeight;
+            var scrollTop = window.pageYOffset || window.scrollTop;
+            var scrollPercent = scrollTop/scrollArea || 0;
+            
+            var lmenu = document.getElementById("leftmenu");
+            var rmenu = document.getElementById("rightmenu");
+            var width = Math.max(0, (50 - (100 * scrollPercent)));
+
+            // console.log("you are ", scrollPercent, " of the way down the page");
+            lmenu.style.width =  width + "%";
+            rmenu.style.width =  width + "%";
+            lmenu.style.marginLeft = (50 - width) + "%";
+
+            document.getElementById("main-title").style.transform = "scale(" + (1- 5 * scrollPercent) + ")";
+        });
+
+    </script>
+    
+</body>
+</html>
