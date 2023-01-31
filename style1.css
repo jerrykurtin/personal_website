@@ -92,8 +92,8 @@ a:link {
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     transition-property: transform;
-    -webkit-transform: translate(0px, 0px);
-    -moz-transform: translate(0px, 0px);
+    -webkit-transform: scale(.75);
+    -moz-transform: scale(.75);
     transform: scale(.75);
 }
 
@@ -203,8 +203,8 @@ a:link {
     width: 32vw;
 }
 #school-circle-pos{
-    top: 20px;
-    left: 40px;
+    top: 4vw;
+    left: 9vw;
 }
 
 #linkedin-circle {
@@ -215,8 +215,8 @@ a:link {
     width: 16vw;
 }
 #linkedin-circle-pos {
-    top: 125px;
-    left: 350px;
+    top: 25vw;
+    left: 65vw;
 }
 
 #duel2048-circle {
@@ -243,8 +243,10 @@ a:link {
     width: 28vw;
 }
 #hobbies-circle-pos {
-    top: 300px;
-    left: 325px;
+    top: 55vw;
+    left: 55vw;
+    /* top: 300px; */
+    /* left: 325px; */
 }
 
 #flock-circle {
@@ -255,8 +257,10 @@ a:link {
     width: 20vw;
 }
 #flock-circle-pos {
-    top: 325px;
-    left: 75px;
+    top: 60vw;
+    left: 12vw;
+    /* top: 325px; */
+    /* left: 75px; */
 }
 
 
