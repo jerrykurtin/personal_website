@@ -6,26 +6,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jerry Kurtin</title>
 </head>
 <body>
     <div class="mainWrapper">
         <div class="heading">
-            <h1 id="main-title">Jerry Kurtin</h1>
+            <h1 class="wavy" id="main-title">Jerry Kurtin</h1>
         </div>
         <p id="mobile-friendly">Mobile-Friendly Website!</p>
         <div class="menu" id="menu">
             <div class="leftmenu" id="leftmenu">
-                <div class="menu-select upper" id="qual-menu">Skills</div>
-                <div class="menu-select lower" id="abt-menu">About</div>
+                <a href="pages/skills.html">
+                    <div class="menu-select upper" id="skills-menu">Skills</div>
+                </a>
+                <a href="pages/about.html">
+                    <div class="menu-select lower" id="abt-menu">About</div>
+                </a>
             </div>
             <img src="media/headshot.png" alt="Jerry's Portrait" id="headshot">
             <div class="rightmenu" id="rightmenu">
-                <div class="menu-select upper" id="port-menu">Portfolio</div>
-                <div class="menu-select lower" id="service-menu">Service</div>
+                <a href="pages/portfolio.html">
+                    <div class="menu-select upper" id="port-menu">Portfolio</div>
+                </a>
+                <a href="pages/service.html">
+                    <div class="menu-select lower" id="service-menu">Service</div>
+                </a>
             </div>
         </div>
-        <div id="ai-select" class="menu-select">AI-Generated Page</div>
+
+        <a href="pages/ai.html">
+            <div id="ai-select" class="menu-select">A.I.-Generated Page</div>
+        </a>
+
+        <div class="heading">
+            <h2 class="wavy">At-A Glance</h2>
+        </div>
         <div class="bubbles-wrapper">
             <div class="circle-container" id="school-circle-pos">
                 <div id="school-circle" class="circle-base">
@@ -92,8 +107,7 @@
             rmenu.style.width =  width + "%";
             lmenu.style.marginLeft = (50 - width) + "%";
 
-            // document.getElementById("main-title").style.transform = "scale(" + (1- 5 * scrollPercent) + ")";
-            document.getElementById("main-title").style.opacity = (1- 5 * scrollPercent);
+            document.getElementById("main-title").style.opacity = (1 - 5 * scrollPercent);
         });
 
     </script>

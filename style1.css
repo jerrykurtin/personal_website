@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import "animations.css";
 
 html, body {
     --maincolor: rgb(230, 230, 230);
     --secondcolor: rgb(17, 17, 17);
+    --mutedsecondcolor: rgb(104, 82, 6);
     --compcolor: rgb(229,196,98);
+    --mutedcompcolor: rgb(236, 217, 162);
 
     --large-font: 5vw;
     --medium-font: 3vw;
@@ -25,35 +28,39 @@ html, body {
 }
 
 h1 { 
-    color: var(--secondcolor);
+    /* color: var(--secondcolor);
     font-family:
-    'Helvetica Neue', sans-serif;
-    font-size: 12vw;
+    'Helvetica Neue', sans-serif; */
+    font-size: 15vw;
     font-weight: bold;
-    line-height: 1;
+    /* line-height: 1; */
     text-align: center;
 
-    background-color: var(--compcolor);
-    padding: 4vw 5vw;
+    /* background-color: var(--mutedcompcolor);
+    padding: 4vw 5vw; */
     /* border: 1vw solid; */
-    border-color: #111;
-    border-radius: 9vw
+    /* border-radius: 9vw */
     /* border-radius: 0 10vw 10vw 0; */
 }
 
 h2 {
-    color: #111;
+    color: var(--secondcolor);
     /* font-family: 'Open Sans', sans-serif; */
-    font-size: 5vw;
+    font-size: 10vw;
     font-weight: 300;
     line-height: 1;
     text-align: center;
+
+    /* background-color: var(--compcolor);
+    border-radius: 5vw; */
+    margin-bottom: 5%;
+
 }
 
 p {
-    color: #685206;
+    /* color: var(--mutedsecondcolor); */
     /* font-family: 'Helvetica Neue', sans-serif; */
-    font-size: 2.5vw;
+    font-size: 3vw;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -81,26 +88,11 @@ a:link {
 
 .circle-base {
     /* background: none repeat scroll 0 0 var(--compcolor); */
+    background-color: var(--mutedcompcolor);
     display: table-cell;
     margin: 0 auto;
     vertical-align: middle;
     text-align: center;
-
-    -webkit-transition: .4s ;
-    -moz-transition: .4s ;
-    transition: .4s ;
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    transition-property: transform;
-    -webkit-transform: scale(.75);
-    -moz-transform: scale(.75);
-    transform: scale(.75);
-}
-
-
-.circle-base:hover,
-.circle-base:focus {
-    transform: scale(1.5);
 }
 
 .circle-container {
@@ -130,12 +122,24 @@ a:link {
 .menu-select {
     background-color: var(--compcolor);
     padding: 3vw 3vw;
-    border-radius: 5vh;
+    border-radius: 3vh;
     overflow: hidden;
     /* margin: 10% 0; */
 
     font-size: var(--large-font);
     font-weight: bold;
+}
+
+.return-container {
+    display: flex;
+    justify-content: center;
+}
+
+.return {
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: var(--medium-font);
+    padding: 2vw 3vw;
 }
 
 .upper {
@@ -176,7 +180,7 @@ a:link {
     /* border: 1px solid; */
 }
 #ai-select{    
-    width: 30%;
+    width: 50%;
     /* position: absolute;
     left: 35%; */
     /* border: 1px solid; */
@@ -187,7 +191,7 @@ a:link {
 
 .bubbles-wrapper{
     position: relative;
-    border: 1px solid;
+    /* border: 1px solid; */
 
     width: 100%;
     height: 100vw;
@@ -196,19 +200,17 @@ a:link {
 
 #school-circle {
     position: relative;
-    background-color: var(--compcolor);
     font-size: var(--medium-font);
     border-radius: 16vw;
     height: 32vw;
     width: 32vw;
 }
 #school-circle-pos{
-    top: 4vw;
+    top: 2vw;
     left: 9vw;
 }
 
 #linkedin-circle {
-    background-color: var(--compcolor);
     font-size: var(--icon-size);
     border-radius: 8vw;
     height: 16vw;
@@ -220,7 +222,6 @@ a:link {
 }
 
 #duel2048-circle {
-    background-color: var(--compcolor);
     font-size: var(--medium-font);
     border-radius: 12vw;
     height: 24vw;
@@ -236,7 +237,6 @@ a:link {
 }
 
 #hobbies-circle {
-    background-color: var(--compcolor);
     font-size: var(--medium-font);
     border-radius: 14vw;
     height: 28vw;
@@ -250,7 +250,6 @@ a:link {
 }
 
 #flock-circle {
-    background-color: var(--compcolor);
     font-size: var(--medium-font);
     border-radius: 10vw;
     height: 20vw;
@@ -258,11 +257,46 @@ a:link {
 }
 #flock-circle-pos {
     top: 60vw;
-    left: 12vw;
+    left: 20vw;
     /* top: 325px; */
     /* left: 75px; */
 }
 
+
+/* about page */
+#about-page a:link {
+    text-decoration: underline;
+  }
+  
+  #about-page a:visited {
+    text-decoration: underline;
+  }
+
+
+.paragraph {
+    margin: 0 5%;
+    padding: 1vw 4vw;
+    background-color: var(--mutedcompcolor);
+    border-radius: 5vw;
+}
+
+.floating-rect {
+    width: 70%;
+    text-align: left;
+    padding: 1vw 4vw;
+    background-color: var(--mutedcompcolor);
+    border-radius: 5vw;
+    margin-bottom: 10%;
+}
+
+.left {
+    display: flex;
+    justify-content: left;
+}
+.right {
+    display: flex;
+    justify-content: right;
+}
 
 
 /* big screen support */
@@ -270,17 +304,17 @@ a:link {
 
 
     h1 { 
-        font-size: 60px;
-        padding: 20px 25px;
-        border-radius: 45px;
+        font-size: 75px;
+        /* padding: 20px 25px;
+        border-radius: 45px; */
     }
     
     h2 {
-        font-size: 25px;
+        font-size: 50px;
     }
     
     p {
-        font-size: 12.5px;
+        font-size: 15px;
     }
 
     .menu {
@@ -291,11 +325,16 @@ a:link {
         border-radius: 45px;
     }
     .menu-select{
-        background-color: var(--compcolor);
         padding: 15px 15px;
         border-radius: 25px;
         font-size: var(--large-font-px);
     }
+
+    .return {
+        font-size: var(--medium-font-px);
+        padding: 10px 15px;
+    }
+
     .upper {
         margin-top: 50px;
         margin-bottom: 150px;
@@ -309,7 +348,7 @@ a:link {
         width: 160px;
     }
     #school-circle-pos{
-        top: 20px;
+        top: 10px;
         left: 40px;
     }
 
@@ -358,7 +397,11 @@ a:link {
     }
     #flock-circle-pos {
         top: 325px;
-        left: 75px;
+        left: 100px;
     }
 
+    .paragraph {
+        padding: 5px 20px;
+        border-radius: 25px;
+    }
 }
