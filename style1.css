@@ -3,6 +3,7 @@
 
 html, body {
     --maincolor: rgb(230, 230, 230);
+    --mutedmaincolor: rgb(210, 210, 210);
     --secondcolor: rgb(17, 17, 17);
     --mutedsecondcolor: rgb(104, 82, 6);
     --compcolor: rgb(229,196,98);
@@ -134,6 +135,38 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/* Menu Bar settings */
+ul.select-menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+  }
+  
+  .select-menu li{
+    font-size: var(--large-font);
+    margin: 0;
+  }
+  
+  .select-menu li a {
+    display: block;
+    color: var(--secondcolor);
+    text-align: center;
+    padding: 2vw 2.5vw;
+    text-decoration: none;
+  }
+  
+  .select-menu li a:hover:not(.active) {
+    background-color: var(--mutedmaincolor);
+  }
+  
+  .select-menu .active {
+    background-color: var(--compcolor);
+  }
 
 /* hyperlink settings */
 a:link {
@@ -365,12 +398,32 @@ iframe {
 }
 
 .rect-body {
-    /* width: 70%; */
     text-align: left;
     padding: 1vw 4vw;
     background-color: var(--mutedcompcolor);
     border-radius: 5vw;
 }
+
+.heading-pic {
+    display: flex;
+    align-items: left;
+}
+
+.small-heading {
+    width: 55%;
+}
+
+.middle-space {
+    width: 5%;
+}
+
+.small-pic {
+    width: 40%;
+    height: auto;
+    margin: 2% 0;
+    border-radius: 3vw;
+}
+
 .cloud {
     display: hidden;
 }
@@ -516,6 +569,10 @@ iframe {
         border-radius: 25px;
     }
 
+    .small-pic {
+        border-radius: 15px;
+    }
+
     /*Simple css to style it like a toggle switch*/
     .theme-switch-wrapper em {
         margin-left: 10px;
@@ -538,5 +595,14 @@ iframe {
     .slider.round {
         border-radius: 34px;
     }
+
+    /* Upper menu */
+      .select-menu li{
+        font-size: var(--large-font-px);
+      }
+      
+      .select-menu li a {
+        padding: 10px 12.5px;
+      }
 
 }

@@ -10,66 +10,25 @@
 </head>
 <body>
     <div class="mainWrapper">
+        <!-- menu bar -->
+        <ul class="select-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a class="active" href="portfolio.html">Portfolio</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
         <div class="heading">
             <h1 class="wavy">Portfolio</h1>
         </div>
         
-        <a href="../index.html">
+        <!-- <a href="../index.html">
             <div class="return-container">
                 <div class="menu-select return"><i class="uil uil-left-arrow-from-left"></i> Return</div>
             </div>
-        </a>
-
-        <h2 class="wavy">Projects</h2>
-        <div class="left">
-            <div class="floating-rect">
-                <div class="rect-body">
-                    <h3><a href="https://www.2048duel.com" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> 2048 Duel!</a></h3>
-                    <p>I created a brand-new way to play the classic 2048, this time in a 1v1 against your friends. I used HTML, Javascript, and CSS, and I reached over 200 users in the first week!</p>
-                </div>
-                <div class="cloud-container">
-                    <div class="centered-container">
-                        <div class="cloud"></div>
-                        <div class="cloud second"></div>
-                        <div class="cloud"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="right">
-            <div class="floating-rect">
-                <div class="cloud-container">
-                    <div class="centered-container">
-                        <div class="cloud"></div>
-                        <div class="cloud second"></div>
-                        <div class="cloud"></div>
-                    </div>
-                </div>
-                <div class="rect-body">
-                    <h3><a href="https://devpost.com/software/flock-9yb8iq" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> Flock</a></h3>
-                    <p>I competed in TAMUHack 2023, and my team made Flock, an app to help travelers make the most of their layovers. We placed 3rd out of 32 teams in the American Airlines Challenge!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="left">
-            <div class="floating-rect">
-                <div class="rect-body">
-                    <h3><a href="https://github.com/jerrykurtin/PerilScope" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> PerilScope</a></h3>
-                    <p>In the Spring of 2022, I competed in Aggies Invent for First Responders, a 48-hour design competition. My team made an intelligent monitoring system for police vehicles, and we placed 1st out of 14 teams!</p>
-                </div>
-                <div class="cloud-container">
-                    <div class="centered-container">
-                        <div class="cloud"></div>
-                        <div class="cloud second"></div>
-                        <div class="cloud"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="wavy">Work Experience</h2>
+        </a> -->
+        <h2 class="bubbly">Work Experience</h2>
         <div class="right">
             <div class="floating-rect">
                 <div class="cloud-container">
@@ -89,8 +48,9 @@
         <div class="left">
             <div class="floating-rect">
                 <div class="rect-body">
-                    <h3>Applied Research Laboratories</h3>
+                    <h3><a href="../media/arl_final_poster.pdf" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> Applied Research Laboratories</a></h3>
                     <p>In the Summer of 2021, I used computer vision to classify whale calls and studied computer vision's vulnerability to malicious manipulation, attacking my models and rebuilding them to be less vulnerable to attacks.</p>
+                    <p>My poster and final presentation placed 2nd out of the 16 interns for its clarity and relevance.</p>
                 </div>
                 <div class="cloud-container">
                     <div class="centered-container">
@@ -101,6 +61,93 @@
                 </div>
             </div>
         </div>
+
+        <h2 class="bubbly">Publications</h2>
+        <div class="right">
+            <div class="floating-rect">
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
+                <div class="rect-body">
+                    <h3><a href="https://openreview.net/forum?id=9X-hgLDLYkQ" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> Hierarchical Protein Representations via Complete 3D Graph Networks (ICLR 2023 poster) </a></h3>
+                    <p>My team built graph networks to learn protein representations at 3 different levels of granularity: amino acid, backbone, and all-atom levels. I added regularization tricks to improve performance by 12.38%.</p>
+                    <p>This deep learning model was used to classify proteins, predict the type of reactions a protein acts as a catalyst for, and predict a protein's interaction with other molecules.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="bubbly">Projects</h2>
+        <div class="left">
+            <div class="floating-rect">
+                <div class="rect-body">
+                    <div class="heading-pic">
+                        <div class="small-heading">
+                            <h3><a href="https://www.2048duel.com" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> 2048 Duel!</a></h3>
+                            <p>I created a brand-new way to play the classic 2048, this time in a 1v1 against your friends. I used HTML, Javascript, and CSS, and I reached over 200 users in the first week!</p>
+                        </div>
+                        <div class="middle-space"></div>
+                        <video controls loop autoplay class="small-pic">
+                            <source src="../media/2048_gameplay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        <!-- <img class="small-pic" src="../media/2048_still.png" alt="2048 Gameplay" id="gameplay"> -->
+                    </div>
+                </div>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="floating-rect">
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
+                <div class="rect-body">
+                    <div class="heading-pic">
+                        <video controls loop autoplay class="small-pic">
+                            <source src="../media/flock_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="middle-space"></div>
+                        <div class="small-heading">
+                            <h3><a href="https://devpost.com/software/flock-9yb8iq" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> Flock</a></h3>
+                            <p>I competed in TAMUHack 2023, and my team made Flock, an app to help travelers make the most of their layovers. I built a forum inside the app to allow users to suggest activities and vote for their favorites. We placed 3rd out of 32 teams in the American Airlines Challenge!</p>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="left">
+            <div class="floating-rect">
+                <div class="rect-body">
+                    <h3><a href="https://github.com/jerrykurtin/PerilScope" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> PerilScope</a></h3>
+                    <p>In the Spring of 2022, I competed in Aggies Invent for First Responders, a 48-hour design competition. My team made an intelligent monitoring system for police vehicles, and we placed 1st out of 14 teams!</p>
+                </div>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script>
