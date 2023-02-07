@@ -21,7 +21,7 @@ html, body {
 
     background-color: var(--maincolor);
     color: var(--secondcolor);
-    font-family: 'Cabin', 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
 .mainWrapper {
@@ -411,6 +411,10 @@ iframe {
 
 .small-heading {
     width: 55%;
+}
+
+.small-heading h3{
+    text-align: center;
 }
 
 .middle-space {
