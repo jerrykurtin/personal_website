@@ -22,17 +22,38 @@ html, body {
 
 /* Floating rectangle */
 .floating-rect {
+    width: 100%;
+    display: flex;
     -webkit-transition: 1s ease-in-out;
     -moz-transition: 1s ease-in-out;
     transition: 1s ease-in-out;
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     transition-property: transform;
-    transform: translateX(0);
+    margin-bottom: 10%;
+}
+
+.rect-body {
+    display: block;
+    width: 75%;
+    text-align: left;
+    padding: 1vw 4vw;
+    background-color: var(--mutedcompcolor);
+    border-radius: 5vw;
+}
+
+.cloud-container {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right .cloud-container {
+    justify-content: flex-end;
 }
 
 
-/* Motion on the floating rectangle */
+/* Motion on the floating rectangle blocks */
 .left {
     display: flex;
     justify-content: right;
@@ -42,10 +63,33 @@ html, body {
     justify-content: left;
 }
 
-.left .floating-rect.visible {
-    transform: translateX(-28%);
+.left .floating-rect {
+    transform: translateX(50%);
 }
 
-.right .floating-rect.visible {
-    transform: translateX(28%);
+.right .floating-rect {
+    transform: translateX(-50%);
+}
+
+.floating-rect.visible {
+    transform: translateX(0%);
+}
+
+.cloud {
+    background-color: var(--secondcolor);
+    width: 10vw;
+    height: 3vw;
+    border-radius: 2vw;
+    margin: 4vw
+}
+
+.left .cloud.second {
+    margin-left: 10vw;
+}
+
+.right .cloud {
+    margin-left: 10vw;
+}
+.right .cloud.second {
+    margin-left: 4vw;
 }

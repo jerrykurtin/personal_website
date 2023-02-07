@@ -29,26 +29,46 @@
                     <p><strong>From Projects: </strong> C++, HTML/CSS, JavaScript</p>
                 </div>
                 <div class="cloud-container">
-                    <div class="cloud"></div>
-                    <div class="cloud second"></div>
-                    <div class="cloud"></div>
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="right">
             <div class="floating-rect">
-                <h3>Technologies</h3>
-                <p><strong>Industry Experience:</strong> Pivotal Cloud Foundry, PyTorch</p>
-                <p><strong>From Projects: </strong> React, Flask, Pandas, Conda/PyPi, C++STL</p>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
+                <div class="rect-body">
+                    <h3>Technologies</h3>
+                    <p><strong>Industry Experience:</strong> Pivotal Cloud Foundry, PyTorch</p>
+                    <p><strong>From Projects: </strong> React, Flask, Pandas, Conda/PyPi, C++STL</p>
+                </div>
             </div>
         </div>
 
 
         <div class="left">
             <div class="floating-rect">
-                <h3>Tools</h3>
-                <p>GitHub, Agile (Scrum), Jira, Docker, Linux</p>
+                <div class="rect-body">
+                    <h3>Tools</h3>
+                    <p>GitHub, Agile (Scrum), Jira, Docker, Linux</p>
+                </div>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -56,24 +76,42 @@
 
         <div class="right">
             <div class="floating-rect">
-                <h3>Industry</h3>
-                <ul>
-                    <li>Backend Development: I love well-structured code!</li>
-                    <li>API Development: I have a user-focused personality.</li>
-                    <li>High-Performance Computing: I am excellent at low-level coding.</li>
-                    <li>Full-Stack Development: I have a great attention to detail.</li>
-                </ul>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
+                <div class="rect-body">
+                    <h3>Industry</h3>
+                    <ul>
+                        <li>Backend Development: I love well-structured code!</li>
+                        <li>API Development: I have a user-focused personality.</li>
+                        <li>High-Performance Computing: I am excellent at low-level coding.</li>
+                        <li>Full-Stack Development: I have a great attention to detail.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="left">
             <div class="floating-rect">
-                <h3>Research</h3>
-                <ul>
-                    <li>Graph Neural Networks</li>
-                    <li>Molecule Property Prediction</li>
-                    <li>PDE Solvers</li>
-                </ul>
+                <div class="rect-body">
+                    <h3>Research</h3>
+                    <ul>
+                        <li>Graph Neural Networks</li>
+                        <li>Molecule Property Prediction</li>
+                        <li>PDE Solvers</li>
+                    </ul>
+                </div>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -88,6 +126,7 @@
     </div>
 
     <script>
+        
         // get current theme
          function changeStylesheet(newStyle){
             console.log("changing stylesheet to ", newStyle);
@@ -118,7 +157,7 @@
         let obsOptions = {
             // root: document.querySelector('#scrollArea'),
             rootMargin: '0px',
-            threshold: 0.5
+            threshold: 0.2
         }
 
         let observer = new IntersectionObserver(rectangleCallback, obsOptions);

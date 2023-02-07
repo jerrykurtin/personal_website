@@ -287,11 +287,18 @@ iframe {
 
 .floating-rect {
     width: 70%;
+    margin-bottom: 10%;
+}
+
+.rect-body {
+    /* width: 70%; */
     text-align: left;
     padding: 1vw 4vw;
     background-color: var(--mutedcompcolor);
     border-radius: 5vw;
-    margin-bottom: 10%;
+}
+.cloud {
+    display: hidden;
 }
 
 .left {
@@ -417,7 +424,7 @@ iframe {
         border-radius: 25px;
     }
 
-    .floating-rect {
+    .rect-body {
         padding: 5px 20px;
         border-radius: 25px;
     }
