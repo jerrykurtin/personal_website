@@ -13,19 +13,19 @@
         <div class="heading">
             <h1 class="wavy" id="main-title">Jerry Kurtin</h1>
         </div>
-
-        <div class="subheading">
+        <div class="subheading" id="main-subtitle">
             <!-- mode switch -->
             <div class="theme-switch-wrapper">
                 <label class="theme-switch" for="checkbox">
                     <input type="checkbox" id="checkbox" />
                     <div class="slider round"></div>
               </label>
-              <em>Switch Styles</em>
+              <em>Fluid Mode</em>
             </div>
     
             <p id="mobile-friendly">Mobile-Friendly Website!</p>
         </div>
+
 
         <div class="menu" id="menu">
             <div class="leftmenu" id="leftmenu">
@@ -135,7 +135,8 @@
             }
             else{
                 scrollfunct = function (scrollPercent) {
-                    return 1 - scrollPercent;
+                    return 1;
+                    // return 1 - scrollPercent;
                 }
             }
 
@@ -146,7 +147,11 @@
             rmenu.style.width =  width + "%";
             lmenu.style.marginLeft = (50 - width) + "%";
 
-            document.getElementById("main-title").style.opacity = (1 - 5 * scrollPercent);
+            if (localStorage["theme"] && localStorage["theme"] == "style2"){
+                document.getElementById("main-title").style.opacity = (1 - 5 * scrollPercent);
+                document.getElementById("main-subtitle").style.opacity = (1 - 5 * scrollPercent);
+
+            }
         }
 
         document.addEventListener('scroll', updateScroll);
@@ -199,7 +204,8 @@
         }
         toggleSwitch.addEventListener('change', switchTheme, false);
 
-        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : style2;
+        localStorage.setItem('theme', null);
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
 

@@ -125,14 +125,13 @@
 
     </div>
 
-    <script>
-        
+    <script>        
         // get current theme
          function changeStylesheet(newStyle){
             console.log("changing stylesheet to ", newStyle);
             document.getElementById("style").setAttribute("href", "../" + newStyle + ".css");
         }
-        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : "style2";
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -162,9 +161,12 @@
 
         let observer = new IntersectionObserver(rectangleCallback, obsOptions);
         const bubbles = document.querySelectorAll(".floating-rect");
-        bubbles.forEach((el) => {
-            observer.observe(el);
-        })
+        setTimeout( function () {
+            bubbles.forEach((el) => {
+                observer.observe(el);
+            })
+        }, 100);
+        
 
 
     </script>

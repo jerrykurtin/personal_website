@@ -45,7 +45,7 @@
             console.log("changing stylesheet to ", newStyle);
             document.getElementById("style").setAttribute("href", "../" + newStyle + ".css");
         }
-        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : "style2";
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -53,5 +53,32 @@
                 changeStylesheet("style2");
             }
         }
+
+        // floating rectangle callback
+        let rectangleCallback = (entries, observer) => {
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting){
+                    entry.target.classList.add("visible");
+                }
+                else {
+                    entry.target.classList.remove("visible");
+                }
+            });
+        };
+
+        let obsOptions = {
+            // root: document.querySelector('#scrollArea'),
+            rootMargin: '0px',
+            threshold: 0.2
+        }
+
+        let observer = new IntersectionObserver(rectangleCallback, obsOptions);
+        const bubbles = document.querySelectorAll(".floating-rect");
+        setTimeout( function () {
+            bubbles.forEach((el) => {
+                observer.observe(el);
+            })
+        }, 100);
     </script>
 </body>

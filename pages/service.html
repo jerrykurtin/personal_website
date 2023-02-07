@@ -20,20 +20,37 @@
             </div>
         </a>
 
-
         <div class="left">
             <div class="floating-rect">
-                <h3><a href="https://rotarydistrict5870.org/sitepage/ryla" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> RYLA: Volunteer Counselor</a></h3>
-                <p>I'm a volunteer counselor at RYLA, a week-long leadership and emotional intelligence summer camp for high school juniors and seniors.
-                    Here, I helped kids grow into the best version of themselves and learned the importance of genuine, vulnerable connections.
-                </p>
+                <div class="rect-body">
+                    <h3><a href="https://rotarydistrict5870.org/sitepage/ryla" target="_blank" rel="noopener noreferrer"><i class="uil uil-link"></i> RYLA: Volunteer Counselor</a></h3>
+                    <p>I'm a volunteer counselor at RYLA, a week-long leadership and emotional intelligence summer camp for high school juniors and seniors.
+                        Here, I helped kids grow into the best version of themselves and learned the importance of genuine, vulnerable connections.
+                    </p>
+                </div>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="right">
             <div class="floating-rect">
-                <h3>Interact Club: President</h3>
-                <p>I was the president of my high school's Interact Club, a service organization at my high school. In my year as president, we doubled our service activities and increased active membership by 4x.</p>
+                <div class="cloud-container">
+                    <div class="centered-container">
+                        <div class="cloud"></div>
+                        <div class="cloud second"></div>
+                        <div class="cloud"></div>
+                    </div>
+                </div>
+                <div class="rect-body">
+                    <h3>Interact Club: President</h3>
+                    <p>I was the president of my high school's Interact Club, a service organization at my high school. In my year as president, we doubled our service activities and increased active membership by 4x.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -44,7 +61,7 @@
             console.log("changing stylesheet to ", newStyle);
             document.getElementById("style").setAttribute("href", "../" + newStyle + ".css");
         }
-        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : "style2";
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -52,6 +69,34 @@
                 changeStylesheet("style2");
             }
         }
+
+
+        // floating rectangle callback
+        let rectangleCallback = (entries, observer) => {
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting){
+                    entry.target.classList.add("visible");
+                }
+                else {
+                    entry.target.classList.remove("visible");
+                }
+            });
+        };
+
+        let obsOptions = {
+            // root: document.querySelector('#scrollArea'),
+            rootMargin: '0px',
+            threshold: 0.2
+        }
+
+        let observer = new IntersectionObserver(rectangleCallback, obsOptions);
+        const bubbles = document.querySelectorAll(".floating-rect");
+        setTimeout( function () {
+            bubbles.forEach((el) => {
+                observer.observe(el);
+            })
+        }, 100);
 
     </script>
 </body>
