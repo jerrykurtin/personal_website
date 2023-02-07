@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../style1.css">
+    <link id="style" rel="stylesheet" href="../style1.css">
+    <link id="style" rel="stylesheet" href="ai.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,5 +21,34 @@
             </div>
         </a>
 
+        <div>
+            <p>The concept of robots overtaking the world and causing harm to humanity is a common theme in science fiction. While advancements in technology have led to the development of increasingly advanced robots, it is unlikely that they will become a threat to humanity in the near future. Currently, robots are programmed to perform specific tasks and do not possess the capability to make independent decisions that would lead to them taking over the world.</p>
+            <p>However, it is important to consider the ethical implications of AI and ensure that their development and use align with human values and societal good. Ongoing discussions and research in the field aim to ensure that AI advancements are safe and beneficial for humanity.</p>
+        </div>
+          
+        <h2>List of Prompts</h2>
+        <ul>
+        <li>create an html text element containing your thoughts on robot overloads taking over the world</li>
+        <li>build a css file to format this element in a modern style</li>
+        <li>give me a list of the prompts i gave you inside an html element</li>
+        </ul>
+
+
     </div>
+
+    <script>
+        // get current theme
+        function changeStylesheet(newStyle){
+            console.log("changing stylesheet to ", newStyle);
+            document.getElementById("style").setAttribute("href", "../" + newStyle + ".css");
+        }
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : "style2";
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'style2') {
+                changeStylesheet("style2");
+            }
+        }
+    </script>
 </body>

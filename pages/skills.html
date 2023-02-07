@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../style1.css">
+    <link id="style" rel="stylesheet" href="../style1.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,9 +23,16 @@
         <h2 class="wavy">Technical Skills</h2>
         <div class="left">
             <div class="floating-rect">
-                <h3>Programming Languages</h3>
-                <p><strong>Industry Experience:</strong> Golang (Go), Python, Bash</p>
-                <p><strong>From Projects: </strong> C++, HTML/CSS, JavaScript</p>
+                <div class="rect-body">
+                    <h3>Programming Languages</h3>
+                    <p><strong>Industry Experience:</strong> Golang (Go), Python, Bash</p>
+                    <p><strong>From Projects: </strong> C++, HTML/CSS, JavaScript</p>
+                </div>
+                <div class="cloud-container">
+                    <div class="cloud"></div>
+                    <div class="cloud second"></div>
+                    <div class="cloud"></div>
+                </div>
             </div>
         </div>
 
@@ -79,4 +86,47 @@
         </div>
 
     </div>
+
+    <script>
+        // get current theme
+         function changeStylesheet(newStyle){
+            console.log("changing stylesheet to ", newStyle);
+            document.getElementById("style").setAttribute("href", "../" + newStyle + ".css");
+        }
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : "style2";
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'style2') {
+                changeStylesheet("style2");
+            }
+        }
+
+        // floating rectangle callback
+        let rectangleCallback = (entries, observer) => {
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting){
+                    entry.target.classList.add("visible");
+                }
+                else {
+                    entry.target.classList.remove("visible");
+                }
+            });
+        };
+
+        let obsOptions = {
+            // root: document.querySelector('#scrollArea'),
+            rootMargin: '0px',
+            threshold: 0.5
+        }
+
+        let observer = new IntersectionObserver(rectangleCallback, obsOptions);
+        const bubbles = document.querySelectorAll(".floating-rect");
+        bubbles.forEach((el) => {
+            observer.observe(el);
+        })
+
+
+    </script>
 </body>

@@ -19,6 +19,7 @@ html, body {
     --icon-size-px: 50px;
 
     background-color: var(--maincolor);
+    color: var(--secondcolor);
     font-family: 'Cabin', 'Helvetica Neue', sans-serif;
 }
 
@@ -28,9 +29,6 @@ html, body {
 }
 
 h1 { 
-    /* color: var(--secondcolor);
-    font-family:
-    'Helvetica Neue', sans-serif; */
     font-size: 15vw;
     font-weight: bold;
     /* line-height: 1; */
@@ -45,7 +43,6 @@ h1 {
 
 h2 {
     color: var(--secondcolor);
-    /* font-family: 'Open Sans', sans-serif; */
     font-size: 10vw;
     font-weight: 300;
     line-height: 1;
@@ -59,7 +56,6 @@ h2 {
 
 p {
     /* color: var(--mutedsecondcolor); */
-    /* font-family: 'Helvetica Neue', sans-serif; */
     font-size: 3vw;
     text-align: justify;
     text-justify: inter-word;
@@ -115,8 +111,15 @@ iframe {
 #main-title {
     margin-bottom: 0;
 }
+
+.subheading {
+    display: flex;
+    justify-content: center;
+}
+
 #mobile-friendly {
     text-align: center;
+    margin-left: 5%
 }
 
 /* menu */
@@ -207,9 +210,9 @@ iframe {
 #school-circle {
     position: relative;
     font-size: var(--medium-font);
-    border-radius: 16vw;
-    height: 32vw;
-    width: 32vw;
+    border-radius: 15vw;
+    height: 30vw;
+    width: 30vw;
 }
 #school-circle-pos{
     top: 2vw;
@@ -249,10 +252,8 @@ iframe {
     width: 28vw;
 }
 #hobbies-circle-pos {
-    top: 55vw;
-    left: 55vw;
-    /* top: 300px; */
-    /* left: 325px; */
+    top: 60vw;
+    left: 60vw;
 }
 
 #flock-circle {
@@ -262,10 +263,8 @@ iframe {
     width: 20vw;
 }
 #flock-circle-pos {
-    top: 60vw;
+    top: 65vw;
     left: 20vw;
-    /* top: 325px; */
-    /* left: 75px; */
 }
 
 
@@ -348,10 +347,17 @@ iframe {
 
     /* Circles */
     #school-circle {
+        position: relative;
+        font-size: var(--medium-font);
+        border-radius: 15vw;
+        height: 30vw;
+        width: 30vw;
+    }
+    #school-circle {
         font-size: var(--medium-font-px);
-        border-radius: 80px;
-        height: 160px;
-        width: 160px;
+        border-radius: 75px;
+        height: 150px;
+        width: 150px;
     }
     #school-circle-pos{
         top: 10px;
@@ -366,7 +372,7 @@ iframe {
     }
     #linkedin-circle-pos {
         top: 125px;
-        left: 350px;
+        left: 325px;
     }
 
     #duel2048-circle {
@@ -392,7 +398,7 @@ iframe {
     }
     #hobbies-circle-pos {
         top: 300px;
-        left: 325px;
+        left: 300px;
     }
 
     #flock-circle {
@@ -407,6 +413,11 @@ iframe {
     }
 
     .paragraph {
+        padding: 5px 20px;
+        border-radius: 25px;
+    }
+
+    .floating-rect {
         padding: 5px 20px;
         border-radius: 25px;
     }

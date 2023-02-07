@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../style1.css">
+    <link id="style" rel="stylesheet" href="../style1.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,4 +37,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // get current theme
+        function changeStylesheet(newStyle){
+            console.log("changing stylesheet to ", newStyle);
+            document.getElementById("style").setAttribute("href", "../" + newStyle + ".css");
+        }
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : "style2";
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'style2') {
+                changeStylesheet("style2");
+            }
+        }
+
+    </script>
 </body>

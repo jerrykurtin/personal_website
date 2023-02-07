@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style1.css">
+    <link id = "style" rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,20 @@
         <div class="heading">
             <h1 class="wavy" id="main-title">Jerry Kurtin</h1>
         </div>
-        <p id="mobile-friendly">Mobile-Friendly Website!</p>
+
+        <div class="subheading">
+            <!-- mode switch -->
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+              </label>
+              <em>Switch Styles</em>
+            </div>
+    
+            <p id="mobile-friendly">Mobile-Friendly Website!</p>
+        </div>
+
         <div class="menu" id="menu">
             <div class="leftmenu" id="leftmenu">
                 <a href="pages/skills.html">
@@ -42,6 +55,11 @@
             <h2 class="wavy">At-A Glance</h2>
         </div>
         <div class="bubbles-wrapper">
+            <!-- <svg id="school-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <path fill="#FF0000" d="M37.7,-27.3C53.2,-10.7,73,5.3,70.8,16.7C68.7,28.1,44.4,35,23.2,43.4C2,51.8,-16.2,61.6,-34.3,58C-52.4,54.4,-70.4,37.3,-70.2,21C-69.9,4.7,-51.4,-10.8,-36.7,-27.3C-22,-43.8,-11,-61.4,0.1,-61.4C11.1,-61.5,22.2,-44,37.7,-27.3Z" transform="translate(100 100)" />
+                </defs>
+            </svg> -->
             <div class="circle-container" id="school-circle-pos">
                 <div id="school-circle" class="circle-base">
                     <i class="uil uil-university"></i><strong> School </strong>
@@ -90,25 +108,106 @@
         </div>
     </div>
 
+    <scipt type="text/javascript", src="pagesetup.js"></scipt>
     <script>
-        document.addEventListener('scroll', function() {
-            var windowHeight = window.innerHeight;
-            var windowWidth = window.innerWidth;
-            var scrollArea = 2000 - windowHeight;
-            var scrollTop = window.pageYOffset || window.scrollTop;
-            var scrollPercent = scrollTop/scrollArea || 0;
+
+        // ------------------------ scroll mechanics ------------------------
+        function getScrollPercent() {
+            var h = document.documentElement, 
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+        }
+
+        function updateScroll(){
+            var scrollPercent = getScrollPercent() / 100;
             
             var lmenu = document.getElementById("leftmenu");
             var rmenu = document.getElementById("rightmenu");
-            var width = Math.max(0, (50 - (100 * scrollPercent)));
 
-            // console.log("you are ", scrollPercent, " of the way down the page");
+            // determine the scroll function
+            var scrollfunct;
+            if (localStorage["theme"] && localStorage["theme"] == "style2"){
+                scrollfunct = function (scrollPercent) {
+                    return Math.sin((scrollPercent + .4) * Math.PI);
+                }
+            }
+            else{
+                scrollfunct = function (scrollPercent) {
+                    return 1 - scrollPercent;
+                }
+            }
+
+            let movePercent = scrollfunct(scrollPercent);
+            var width = Math.max(0, (50 * (movePercent)));
+
             lmenu.style.width =  width + "%";
             rmenu.style.width =  width + "%";
             lmenu.style.marginLeft = (50 - width) + "%";
 
             document.getElementById("main-title").style.opacity = (1 - 5 * scrollPercent);
-        });
+        }
+
+        document.addEventListener('scroll', updateScroll);
+
+        // ------------------------ Scroll Observer ------------------------
+
+        // callback function to update circles
+        let circleCallback = (entries, observer) => {
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting){
+                    entry.target.classList.add("visible");
+                }
+                else {
+                    entry.target.classList.remove("visible");
+                }
+            });
+        };
+
+        let obsOptions = {
+            // root: document.querySelector('#scrollArea'),
+            rootMargin: '0px',
+            threshold: 0.5
+        }
+
+        let observer = new IntersectionObserver(circleCallback, obsOptions);
+        const bubbles = document.querySelectorAll(".circle-base");
+        console.log("observing: ", bubbles.length, " circles");
+        bubbles.forEach((el) => {
+            observer.observe(el);
+        })
+
+        // ------------------------ Stylesheet Changes ------------------------
+        function changeStylesheet(newStyle){
+            document.getElementById("style").setAttribute("href", newStyle + ".css");
+            updateScroll();
+        }
+
+        // listener for mode switch
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        function switchTheme(e) {
+            if (e.target.checked) {
+                localStorage.setItem('theme', 'style2');
+                changeStylesheet("style2");
+            }
+            else {
+                localStorage.setItem('theme', 'style1');
+                changeStylesheet("style1");
+            }    
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : style2;
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'style2') {
+                toggleSwitch.checked = true;
+                changeStylesheet("style2");
+            }
+        }
 
     </script>
     
