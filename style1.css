@@ -59,9 +59,15 @@ h3 {
     margin: 2vw;
 }
 
-p, em {
+p {
     /* color: var(--mutedsecondcolor); */
     font-size: var(--medium-font);
+    text-align: justify;
+    text-justify: inter-word;
+}
+em {
+    color: rgb(40, 106, 230);
+    font-size: var(--large-font);
     text-align: justify;
     text-justify: inter-word;
 }
@@ -79,7 +85,6 @@ li {
 
 .theme-switch-wrapper em {
     margin-left: 2vw;
-    font-size: var(--medium-font);
 }
 .theme-switch {
     display: inline-block;
@@ -399,8 +404,11 @@ iframe {
         margin: 10px;
     }
     
-    p, em {
+    p {
         font-size: var(--medium-font-px);
+    }
+    em {
+        font-size: var(--large-font-px);
     }
     
     li {
@@ -523,7 +531,12 @@ iframe {
         left: 4px;
         width: 26px;
     }
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
     .slider.round {
         border-radius: 34px;
     }
+
 }

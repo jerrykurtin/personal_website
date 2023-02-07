@@ -68,32 +68,3 @@
           50.5% 90%, 50.5% 90%, 50.5% 90%, 50.5% 90%,
           50.5% 95%, 50.5% 95%, 50.5% 95%, 50.5% 95%}
   }
-
-
-
-  /* big screen support */
-@media screen and (min-width: 520px) {
-      .theme-switch-wrapper em {
-            margin-left: 10px;
-            font-size: var(--medium-font-px);
-      }
-      .theme-switch {
-            height: 34px;
-            width: 60px;
-      }
-          
-      .slider:before {
-            bottom: 4px;
-            height: 26px;
-            left: 4px;
-            width: 26px;
-      }
-          
-      input:checked + .slider:before {
-            transform: translateX(26px);
-      }
-          
-      .slider.round {
-            border-radius: 34px;
-      }
-}

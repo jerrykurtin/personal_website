@@ -20,7 +20,7 @@
                     <input type="checkbox" id="checkbox" />
                     <div class="slider round"></div>
               </label>
-              <em>Fluid Mode</em>
+              <em><i class="uil uil-arrow-left"></i> Fluid Mode</em>
             </div>
     
             <p id="mobile-friendly">Mobile-Friendly Website!</p>
@@ -130,7 +130,10 @@
             var scrollfunct;
             if (localStorage["theme"] && localStorage["theme"] == "style2"){
                 scrollfunct = function (scrollPercent) {
-                    return Math.sin((scrollPercent + .4) * Math.PI);
+                    return Math.sin((scrollPercent + .6) * Math.PI * .63);
+                    // return Math.sin((scrollPercent + .7) * Math.PI * .6);
+                    // return Math.sin((scrollPercent + .4) * Math.PI);
+
                 }
             }
             else{
@@ -204,7 +207,6 @@
         }
         toggleSwitch.addEventListener('change', switchTheme, false);
 
-        localStorage.setItem('theme', null);
         const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);

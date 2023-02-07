@@ -10,6 +10,14 @@ html, body {
     --mutedcompcolor: rgb(110, 135, 180);
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+
 /* Circle Animations */
 .circle-base:hover,
 .circle-base:focus {
@@ -25,6 +33,10 @@ html, body {
     width: 100%;
     display: flex;
     margin-bottom: 10%;
+
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
 
 .rect-body {
@@ -64,7 +76,7 @@ html, body {
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     transition-property: transform;
-    transform: translateX(50%);
+    transform: translateX(90%);
 }
 
 .right .floating-rect {
@@ -74,7 +86,7 @@ html, body {
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     transition-property: transform;
-    transform: translateX(-50%);
+    transform: translateX(-90%);
 }
 
 .floating-rect.visible {
