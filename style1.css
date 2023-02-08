@@ -137,22 +137,22 @@ input:checked + .slider:before {
 }
 
 /* Menu Bar settings */
-ul.select-menu {
+ul.upper-menu {
     display: flex;
     justify-content: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-
+    border-radius: 0;
   }
   
-  .select-menu li{
+  .upper-menu li{
     font-size: var(--large-font);
     margin: 0;
   }
   
-  .select-menu li a {
+  .upper-menu li a {
     display: block;
     color: var(--secondcolor);
     text-align: center;
@@ -160,11 +160,11 @@ ul.select-menu {
     text-decoration: none;
   }
   
-  .select-menu li a:hover:not(.active) {
+  .upper-menu li a:hover:not(.active) {
     background-color: var(--mutedmaincolor);
   }
   
-  .select-menu .active {
+  .upper-menu .active {
     background-color: var(--compcolor);
   }
 
@@ -238,7 +238,7 @@ iframe {
 .menu-select {
     background-color: var(--compcolor);
     padding: 3vw 3vw;
-    border-radius: 3vh;
+    /* border-radius: 3vh; */
     overflow: hidden;
     /* margin: 10% 0; */
 
@@ -389,7 +389,7 @@ iframe {
     margin: 0 5%;
     padding: 1vw 4vw;
     background-color: var(--mutedcompcolor);
-    border-radius: 5vw;
+    border-radius: 0;
 }
 
 .floating-rect {
@@ -401,7 +401,7 @@ iframe {
     text-align: left;
     padding: 1vw 4vw;
     background-color: var(--mutedcompcolor);
-    border-radius: 5vw;
+    border-radius: 0;
 }
 
 .heading-pic {
@@ -434,11 +434,11 @@ iframe {
 
 .left {
     display: flex;
-    justify-content: left;
+    justify-content: center;
 }
 .right {
     display: flex;
-    justify-content: right;
+    justify-content: center;
 }
 
 
@@ -482,7 +482,7 @@ iframe {
     }
     .menu-select{
         padding: 15px 15px;
-        border-radius: 25px;
+        /* border-radius: 25px; */
         font-size: var(--large-font-px);
     }
 
@@ -565,12 +565,12 @@ iframe {
 
     .paragraph {
         padding: 5px 20px;
-        border-radius: 25px;
+        border-radius: 0;
     }
 
     .rect-body {
         padding: 5px 20px;
-        border-radius: 25px;
+        /* border-radius: 25px; */
     }
 
     .small-pic {
@@ -601,11 +601,11 @@ iframe {
     }
 
     /* Upper menu */
-      .select-menu li{
+      .upper-menu li{
         font-size: var(--large-font-px);
       }
       
-      .select-menu li a {
+      .upper-menu li a {
         padding: 10px 12.5px;
       }
 

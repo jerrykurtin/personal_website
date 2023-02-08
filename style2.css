@@ -21,6 +21,28 @@ html, body {
     position: relative
   }
 
+  .upper-menu li a {
+    border-radius: 2vw;
+  }
+
+  .menu-select {
+    background-color: var(--compcolor);
+    padding: 3vw 3vw;
+    border-radius: 3vh;
+    overflow: hidden;
+    /* margin: 10% 0; */
+
+    font-size: var(--large-font);
+    font-weight: bold;
+}
+
+.paragraph {
+    margin: 0 5%;
+    padding: 1vw 4vw;
+    background-color: var(--mutedcompcolor);
+    border-radius: 5vw;
+}
+
 /* Circle Animations */
 .circle-base:hover,
 .circle-base:focus {
@@ -124,6 +146,22 @@ html, body {
 }
 
 @media screen and (min-width: 520px) {
+
+    .menu-select{
+        padding: 15px 15px;
+        border-radius: 25px;
+        font-size: var(--large-font-px);
+    }
+
+    .upper-menu li a {
+        border-radius: 10px;
+      }
+
+    .paragraph {
+        padding: 5px 20px;
+        border-radius: 25px;
+    }
+
     .rect-body {
         padding: 5px 20px;
         border-radius: 25px;
